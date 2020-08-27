@@ -17,3 +17,23 @@ var currentCover;
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+
+function displayRandomCover() {
+  var titleIndex = getRandomIndex(titles);
+  var randomTitle = titles[titleIndex];
+
+  var coverIndex = getRandomIndex(covers);
+  var randomCover = covers[coverIndex];
+
+  var randomDes1Index = getRandomIndex(descriptors);
+  var randomDescriptor1 = descriptors[randomDes1Index];
+
+  var randomDes2Index = getRandomIndex(descriptors);
+  var randomDescriptor2 = descriptors[randomDes2Index];
+
+
+
+  var newCover = new Cover(randomCover, randomTitle, randomDescriptor1, randomDescriptor2);
+  var document.querySelector('.cover-image');
+
+}
