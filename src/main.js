@@ -41,3 +41,6 @@ function displayRandomCover() {
 }
 
 displayRandomCover();
+
+var randomCoverButton = document.querySelector('.random-cover-button');
+randomCoverButton.addEventListener('click', displayRandomCover);
