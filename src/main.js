@@ -19,21 +19,25 @@ function getRandomIndex(array) {
 }
 
 function displayRandomCover() {
-  var titleIndex = getRandomIndex(titles);
-  var randomTitle = titles[titleIndex];
 
-  var coverIndex = getRandomIndex(covers);
-  var randomCover = covers[coverIndex];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomImg = covers[getRandomIndex(covers)];
+  var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
+  var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
 
-  var randomDes1Index = getRandomIndex(descriptors);
-  var randomDescriptor1 = descriptors[randomDes1Index];
+  var newCover = new Cover(randomImg, randomTitle, randomDescriptor1, randomDescriptor2);
 
-  var randomDes2Index = getRandomIndex(descriptors);
-  var randomDescriptor2 = descriptors[randomDes2Index];
+  var displayTitle = document.querySelector('.cover-title');
+  displayTitle.innerText = randomTitle;
 
+  var displayDesc1 = document.querySelector('.tagline-1');
+  displayDesc1.innerText = randomDescriptor1;
 
+  var displayDesc2 = document.querySelector('.tagline-2');
+  displayDesc2.innerText = randomDescriptor2;
 
-  var newCover = new Cover(randomCover, randomTitle, randomDescriptor1, randomDescriptor2);
-  var document.querySelector('.cover-image');
-
+  var displayImg = document.querySelector('.cover-image');
+  displayImg.setAttribute('src', randomImg);
 }
+
+displayRandomCover();
