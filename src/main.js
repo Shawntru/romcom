@@ -1,5 +1,19 @@
 // Create variables targetting the relevant DOM elements here 👇
 
+function displayRandomCover() {
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomImg = covers[getRandomIndex(covers)];
+  var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
+  var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
+  var newCover = new Cover(randomImg, randomTitle, randomDescriptor1, randomDescriptor2);
+
+  document.querySelector('.cover-title').innerText = randomTitle;
+  document.querySelector('.tagline-1').innerText = randomDescriptor1;
+  document.querySelector('.tagline-2').innerText = randomDescriptor2;
+  document.querySelector('.cover-image').setAttribute('src', randomImg);
+}
+
+displayRandomCover();
 
 // We've provided a few variables below
 var savedCovers = [
@@ -9,38 +23,17 @@ var currentCover;
 
 // Add your event listeners here 👇
 
+document.querySelector('.random-cover-button').addEventListener('click', displayRandomCover);
+document.querySelector('.make-new-button').addEventListener('click', showForm);
 
 // Create your event handlers and other functions here 👇
 
+function showForm() {
+  document.querySelector('.form-view').classList.toggle('hidden');
+  document.querySelector('.home-view').classList.toggle('hidden');
+}
 
 // We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-
-function displayRandomCover() {
-
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomImg = covers[getRandomIndex(covers)];
-  var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
-  var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
-
-  var newCover = new Cover(randomImg, randomTitle, randomDescriptor1, randomDescriptor2);
-
-  var displayTitle = document.querySelector('.cover-title');
-  displayTitle.innerText = randomTitle;
-
-  var displayDesc1 = document.querySelector('.tagline-1');
-  displayDesc1.innerText = randomDescriptor1;
-
-  var displayDesc2 = document.querySelector('.tagline-2');
-  displayDesc2.innerText = randomDescriptor2;
-
-  var displayImg = document.querySelector('.cover-image');
-  displayImg.setAttribute('src', randomImg);
-}
-
-displayRandomCover();
-
-var randomCoverButton = document.querySelector('.random-cover-button');
-randomCoverButton.addEventListener('click', displayRandomCover);
