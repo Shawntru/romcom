@@ -25,14 +25,35 @@ var currentCover;
 
 document.querySelector('.random-cover-button').addEventListener('click', displayRandomCover);
 document.querySelector('.make-new-button').addEventListener('click', showForm);
+document.querySelector('.view-saved-button').addEventListener('click', showSaved);
+document.querySelector('.home-button').addEventListener('click', showHome);
 
 // Create your event handlers and other functions here 👇
 
 function showForm() {
-  document.querySelector('.form-view').classList.toggle('hidden');
-  document.querySelector('.home-view').classList.toggle('hidden');
+  document.querySelector('.form-view').classList.remove('hidden');
+  document.querySelector('.home-view').classList.add('hidden');
+  document.querySelector('.random-cover-button').classList.add('hidden');
+  document.querySelector('.save-cover-button').classList.add('hidden');
+  document.querySelector('.home-button').classList.remove('hidden');
 }
 
+function showSaved() {
+  document.querySelector('.saved-view').classList.remove('hidden');
+  document.querySelector('.form-view').classList.add('hidden');
+  document.querySelector('.home-view').classList.add('hidden');
+  document.querySelector('.random-cover-button').classList.add('hidden');
+  document.querySelector('.save-cover-button').classList.add('hidden');
+  document.querySelector('.home-button').classList.remove('hidden');
+}
+
+function showHome() {
+  document.querySelector('.saved-view').classList.add('hidden');
+  document.querySelector('.form-view').classList.add('hidden');
+  document.querySelector('.home-view').classList.remove('hidden');
+  document.querySelector('.random-cover-button').classList.remove('hidden');
+  document.querySelector('.save-cover-button').classList.remove('hidden');
+}
 // We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
