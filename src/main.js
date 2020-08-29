@@ -12,12 +12,13 @@ var viewSaved = document.querySelector('.view-saved-button');
 var createNew = document.querySelector('.create-new-book-button');
 var tag1 = document.querySelector('.tagline-1');
 var tag2 = document.querySelector('.tagline-2');
+var savedCoverSection = document.querySelector('.saved-covers-section');
 
 // We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover;
+var currentCover = {};
 
 // Add your event listeners here 👇
 randomCov.addEventListener('click', getRandomCover);
@@ -25,6 +26,7 @@ makeNew.addEventListener('click', showForm);
 viewSaved.addEventListener('click', showSaved);
 homeButton.addEventListener('click', showHome);
 createNew.addEventListener('click', makeUserBook);
+saveCov.addEventListener('click', saveBook);
 
 // Create your event handlers and other functions here 👇
 getRandomCover();
@@ -41,7 +43,7 @@ function displayCover(currentCover) {
 }
 
 function getRandomCover() {
-  var currentCover = new Cover (
+  currentCover = new Cover (
     covers[getRandomIndex(covers)],
     titles[getRandomIndex(titles)],
     descriptors[getRandomIndex(descriptors)],
@@ -54,7 +56,8 @@ function makeUserBook() {
   event.preventDefault();
   formView.classList.add('hidden');
   homeView.classList.remove('hidden');
-  var currentCover = new Cover (
+  saveCov.classList.remove('hidden');
+  currentCover = new Cover (
     document.getElementById('cover').value,
     document.getElementById('title').value,
     document.getElementById('descriptor1').value,
@@ -66,12 +69,26 @@ function makeUserBook() {
   displayCover(currentCover);
 }
 
+function saveBook() {
+  if (!savedCovers.includes(currentCover)) {
+    savedCovers.push(currentCover);
+  }
+  savedCoverSection.insertAdjacentHTML('afterbegin', `
+    <div class="mini-cover">
+    <img class="mini-cover" src="${currentCover.cover}">
+    <h2 class="cover-title">${currentCover.title}</h2>
+    <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
+    </div>
+  `);
+}
+
 function showForm() {
   formView.classList.remove('hidden');
   homeView.classList.add('hidden');
   randomCov.classList.add('hidden');
   saveCov.classList.add('hidden');
   homeButton.classList.remove('hidden');
+  savedView.classList.add('hidden');
 }
 
 function showSaved() {
