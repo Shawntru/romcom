@@ -1,19 +1,17 @@
 // Create variables targetting the relevant DOM elements here 👇
-
-function displayRandomCover() {
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomImg = covers[getRandomIndex(covers)];
-  var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
-  var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
-  var newCover = new Cover(randomImg, randomTitle, randomDescriptor1, randomDescriptor2);
-
-  document.querySelector('.cover-title').innerText = randomTitle;
-  document.querySelector('.tagline-1').innerText = randomDescriptor1;
-  document.querySelector('.tagline-2').innerText = randomDescriptor2;
-  document.querySelector('.cover-image').setAttribute('src', randomImg);
-}
-
-displayRandomCover();
+var formView = document.querySelector('.form-view');
+var homeView = document.querySelector('.home-view');
+var randomCov = document.querySelector('.random-cover-button');
+var saveCov = document.querySelector('.save-cover-button');
+var homeButton = document.querySelector('.home-button');
+var savedView = document.querySelector('.saved-view');
+var makeNew = document.querySelector('.make-new-button');
+var coverImg = document.querySelector('.cover-image');
+var coverTitle = document.querySelector('.cover-title');
+var viewSaved = document.querySelector('.view-saved-button');
+var createNew = document.querySelector('.create-new-book-button');
+var tag1 = document.querySelector('.tagline-1');
+var tag2 = document.querySelector('.tagline-2');
 
 // We've provided a few variables below
 var savedCovers = [
@@ -22,39 +20,74 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
-
-document.querySelector('.random-cover-button').addEventListener('click', displayRandomCover);
-document.querySelector('.make-new-button').addEventListener('click', showForm);
-document.querySelector('.view-saved-button').addEventListener('click', showSaved);
-document.querySelector('.home-button').addEventListener('click', showHome);
+randomCov.addEventListener('click', getRandomCover);
+makeNew.addEventListener('click', showForm);
+viewSaved.addEventListener('click', showSaved);
+homeButton.addEventListener('click', showHome);
+createNew.addEventListener('click', makeUserBook);
 
 // Create your event handlers and other functions here 👇
+getRandomCover();
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+function displayCover(currentCover) {
+  coverTitle.innerText = currentCover.title;
+  tag1.innerText = currentCover.tagline1;
+  tag2.innerText = currentCover.tagline2;
+  coverImg.setAttribute('src', currentCover.cover);
+}
+
+function getRandomCover() {
+  var currentCover = new Cover (
+    covers[getRandomIndex(covers)],
+    titles[getRandomIndex(titles)],
+    descriptors[getRandomIndex(descriptors)],
+    descriptors[getRandomIndex(descriptors)]
+  );
+  displayCover(currentCover);
+}
+
+function makeUserBook() {
+  event.preventDefault();
+  formView.classList.add('hidden');
+  homeView.classList.remove('hidden');
+  var currentCover = new Cover (
+    document.getElementById('cover').value,
+    document.getElementById('title').value,
+    document.getElementById('descriptor1').value,
+    document.getElementById('descriptor2').value
+  );
+  covers.push(currentCover.cover);
+  titles.push(currentCover.title);
+  descriptors.push(currentCover.tagline1, currentCover.tagline2);
+  displayCover(currentCover);
+}
 
 function showForm() {
-  document.querySelector('.form-view').classList.remove('hidden');
-  document.querySelector('.home-view').classList.add('hidden');
-  document.querySelector('.random-cover-button').classList.add('hidden');
-  document.querySelector('.save-cover-button').classList.add('hidden');
-  document.querySelector('.home-button').classList.remove('hidden');
+  formView.classList.remove('hidden');
+  homeView.classList.add('hidden');
+  randomCov.classList.add('hidden');
+  saveCov.classList.add('hidden');
+  homeButton.classList.remove('hidden');
 }
 
 function showSaved() {
-  document.querySelector('.saved-view').classList.remove('hidden');
-  document.querySelector('.form-view').classList.add('hidden');
-  document.querySelector('.home-view').classList.add('hidden');
-  document.querySelector('.random-cover-button').classList.add('hidden');
-  document.querySelector('.save-cover-button').classList.add('hidden');
-  document.querySelector('.home-button').classList.remove('hidden');
+  savedView.classList.remove('hidden');
+  formView.classList.add('hidden');
+  homeView.classList.add('hidden');
+  randomCov.classList.add('hidden');
+  saveCov.classList.add('hidden');
+  homeButton.classList.remove('hidden');
 }
 
 function showHome() {
-  document.querySelector('.saved-view').classList.add('hidden');
-  document.querySelector('.form-view').classList.add('hidden');
-  document.querySelector('.home-view').classList.remove('hidden');
-  document.querySelector('.random-cover-button').classList.remove('hidden');
-  document.querySelector('.save-cover-button').classList.remove('hidden');
-}
-// We've provided one function to get you started
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
+  savedView.classList.add('hidden');
+  formView.classList.add('hidden');
+  homeView.classList.remove('hidden');
+  randomCov.classList.remove('hidden');
+  saveCov.classList.remove('hidden');
+  homeButton.classList.add('hidden');
 }
