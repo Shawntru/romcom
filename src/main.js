@@ -79,11 +79,13 @@ function saveBook() {
     savedCovers.push(currentCover);
     savedCoverSection.insertAdjacentHTML('afterbegin', `
       <div class="mini-cover" id="${currentCover.id}" ondblclick="deleteSavedBook(${currentCover.id})">
+      <p id="explosion" ondblclick="animateScript()" onmouseout="stopAnimate()">
       <img class="mini-cover" src="${currentCover.cover}">
       <h2 class="cover-title">${currentCover.title}</h2>
       <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
       <img class="price-tag" src="./assets/price.png">
       <img class="overlay" src="./assets/overlay.png">
+      <p/>
       </div>
     `);
   }
@@ -115,3 +117,34 @@ function showHome() {
   saveCov.classList.remove('hidden');
   homeButton.classList.add('hidden');
 }
+
+var tID; //we will use this variable to clear the setInterval()
+
+function stopAnimate() {
+  clearInterval(tID);
+} //end of stopAnimate()
+
+
+function animateScript() {
+
+  var position = 128; //start position for the image slicer
+  const interval = 100; //100 ms of interval for the setInterval()
+  const diff = 128; //diff as a variable for position offset
+
+  tID = setInterval(() => {
+
+    document.getElementById("explosion").styles.backgroundPosition =
+      `-${position}px 0px`;
+    //we use the ES6 template literal to insert the variable "position"
+
+    if (position < 1920) {
+      position = position + diff;
+    }
+    //we increment the position by 256 each time
+    else {
+      position = 128;
+    }
+    //reset the position to 256px, once position exceeds 1536px
+
+  }, interval); //end of setInterval
+} //end of animateScript()

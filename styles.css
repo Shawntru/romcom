@@ -13,6 +13,11 @@ body {
 .hidden {
   display: none;
 }
+/* #explosion {
+  height: 128px;
+  width: 128px;
+  background: url('https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/explode.png') 0px 0px;
+} */
 
 /* ~~~~~~~~~~~~~~ CONTROLS ~~~~~~~~~~~~~~~~ */
 .controls {
@@ -163,4 +168,11 @@ form > button {
 form > button:hover {
   background: #e07999;
   color: white;
+}
+
+/* ~~~~~~~~~~~~~ EXPLOSION ANIMATION ~~~~~~~~~~~~~~~ */
+#explosion {
+  height: 128px;
+  width: 128px;
+  background: url('https://raw.githubusercontent.com/jschomay/phaser-demo-game/master/assets/explode.png') 0px 0px;
 }
