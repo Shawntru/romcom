@@ -27,6 +27,7 @@ viewSaved.addEventListener('click', showSaved);
 homeButton.addEventListener('click', showHome);
 createNew.addEventListener('click', makeUserBook);
 saveCov.addEventListener('click', saveBook);
+// savedCoverSection.addEventListener('dblclick', deleteSavedBook());
 
 // Create your event handlers and other functions here 👇
 getRandomCover();
@@ -52,6 +53,10 @@ function getRandomCover() {
   displayCover(currentCover);
 }
 
+function deleteSavedBook(id) {
+  document.getElementById(id).remove();
+}
+
 function makeUserBook() {
   event.preventDefault();
   formView.classList.add('hidden');
@@ -74,10 +79,12 @@ function saveBook() {
     savedCovers.push(currentCover);
   }
   savedCoverSection.insertAdjacentHTML('afterbegin', `
-    <div class="mini-cover">
+    <div class="mini-cover" id="${currentCover.id}" ondblclick="deleteSavedBook(${currentCover.id})">
     <img class="mini-cover" src="${currentCover.cover}">
     <h2 class="cover-title">${currentCover.title}</h2>
     <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
+    <img class="price-tag" src="./assets/price.png">
+    <img class="overlay" src="./assets/overlay.png">
     </div>
   `);
 }
