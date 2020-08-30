@@ -77,16 +77,16 @@ function makeUserBook() {
 function saveBook() {
   if (!savedCovers.includes(currentCover)) {
     savedCovers.push(currentCover);
+    savedCoverSection.insertAdjacentHTML('afterbegin', `
+      <div class="mini-cover" id="${currentCover.id}" ondblclick="deleteSavedBook(${currentCover.id})">
+      <img class="mini-cover" src="${currentCover.cover}">
+      <h2 class="cover-title">${currentCover.title}</h2>
+      <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
+      <img class="price-tag" src="./assets/price.png">
+      <img class="overlay" src="./assets/overlay.png">
+      </div>
+    `);
   }
-  savedCoverSection.insertAdjacentHTML('afterbegin', `
-    <div class="mini-cover" id="${currentCover.id}" ondblclick="deleteSavedBook(${currentCover.id})">
-    <img class="mini-cover" src="${currentCover.cover}">
-    <h2 class="cover-title">${currentCover.title}</h2>
-    <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
-    <img class="price-tag" src="./assets/price.png">
-    <img class="overlay" src="./assets/overlay.png">
-    </div>
-  `);
 }
 
 function showForm() {
