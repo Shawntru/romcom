@@ -24,7 +24,6 @@ randomCov.addEventListener('click', getRandomCover);
 saveCov.addEventListener('click', saveBook);
 viewSaved.addEventListener('click', showSaved);
 document.body.addEventListener('animationend', removeBookHtml);
-document.body.addEventListener('webkitAnimationEnd', removeBookHtml);
 
 getRandomCover();
 
