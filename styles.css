@@ -123,11 +123,14 @@ body {
 }
 
 .saved-covers-section:hover > * {
-  opacity: 0.4; transform: scale(0.9);
+  opacity: 0.4;
+  transform: scale(0.9);
 }
 
 .saved-covers-section > *:hover {
-  opacity: 1; transform: scale(1.1); transition-delay: 0ms, 0ms;
+  opacity: 1;
+  transform: scale(1.1);
+  transition-delay: 0ms, 0ms;
 }
 
 .mini-cover {
