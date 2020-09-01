@@ -33,6 +33,8 @@ Use the RNG3000 to randomly populate the title, descriptors, and cover image for
   * Click the "Save Cover" button to save the currently displayed cover. 
   * Click the "View Saved Covers" to view all your saved covers.
   * Double click saved covers to remove them from your saved covers list.
+* Randomly generated cover images!
+  * Don't feel like putting in your own image for a custom cover? Just leave it blank and we will pull one for you!
 
 ## To Do List
 
