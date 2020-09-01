@@ -71,9 +71,10 @@ function makeUserBook() {
 }
 
 function pushToAssets() {
-  covers.push(currentCover.cover);
-  descriptors.push(currentCover.tagline1, currentCover.tagline2);
-  titles.push(currentCover.title);
+  if (!covers.includes(currentCover.cover)) {covers.push(currentCover.cover)};
+  if (!titles.includes(currentCover.title)) {titles.push(currentCover.title)};
+  if (!descriptors.includes(currentCover.tagline1)) {descriptors.push(currentCover.tagline1)};
+  if (!descriptors.includes(currentCover.tagline2)) {descriptors.push(currentCover.tagline2)};
 }
 
 function saveBook() {
