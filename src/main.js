@@ -89,7 +89,7 @@ function createHTML() {
   <h2 class="cover-title">${currentCover.title}</h2>
   <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
   <img class="price-tag" src="./assets/price.png">
-  <img class="overlay" src="./assets/overlay.png">
+  <img class="overlay mini-overlay" src="./assets/overlay.png">
   </div>`;
   savedCoverSection.insertAdjacentHTML('afterbegin', htmlBlock);
 }
