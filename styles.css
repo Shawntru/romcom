@@ -140,6 +140,10 @@ body {
   width: 14vw;
 }
 
+.mini-overlay {
+  top: 10.5px
+}
+
 .mini-cover > .cover-title {
   bottom: 45px;
   font-size: 40px;
