@@ -2,7 +2,9 @@
 
 ---
 
-> Tired of the same old romantic slop fests? Get ready to have your socks blown off with this super duper awesome romantic novel cover generator! [Click here to visit the site.](https://shawntru.github.io/romcom/)
+> Tired of the same old romantic slop fests? Get ready to have your socks blown off with this super duper awesome romantic novel cover generator! 
+
+### [Click here to visit the site!](https://shawntru.github.io/romcom/)
 ## Table of Contents
 
 * [General Info](#gerenal-info)
