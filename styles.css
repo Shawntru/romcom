@@ -157,6 +157,20 @@ body {
   padding: 5px;
 }
 
+.removed {
+  animation: disappear 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes disappear{
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(750%);
+  }
+}
+
 /* ~~~~~~~~~~~~~ NEW COVER FORM ~~~~~~~~~~~~~~~ */
 form {
   display: flex;
