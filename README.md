@@ -19,10 +19,37 @@ Use the RNG3000 to randomly populate the title, descriptors, and cover image for
 
 ## Screenshots
 
-![Saved Cover view](https://turingschool.slack.com/files/U0176FZ02KW/F01A79SLS1X/screen_shot_2020-08-31_at_8.52.18_pm.png)
+![Saved Cover view](https://imgur.com/slxiPhu)
 
-![User Input Form](https://turingschool.slack.com/files/U0176FZ02KW/F01A0S9822Y/screen_shot_2020-08-31_at_8.52.06_pm.png)
+![User Input Form](https://imgur.com/IMvixJI)
 
+## Features
+
+* Randomly generate new and exciting titles that will enthrawl your readers and captivate their imagination! 
+  * Click on the "Show New Random Cover" button to generate your cover.
+* Make your own custom cover!
+  * Click on the "Make Your Own Cover" button and fill out the form how you like. Images from the internet can be input by entering their URL address. 
+* Save and View your favorite covers!
+  * Click the "Save Cover" button to save the currently displayed cover. 
+  * Click the "View Saved Covers" to view all your saved covers.
+  * Double click saved covers to remove them from your saved covers list.
+
+## To Do List
+
+* Add micro effects/CSS styling to pointers to enhance interaction between the user and the page. 
+* Add breaking heart animation upon deleting saved covers.
+* Add 'Share with Friends' links.
+
+## Inspiration
+
+We were inspired by our love of the great American novel and telenovela.
+
+## Contact 
+
+If all this awesomeness is too much to handle and you need to reach out and shake our hands, you can find us on Github at:
+
+* [Kara Caputo (Github user: kncaputo)](https://github.com/kncaputo)
+* [Shawn Truesdale (Github user: Shawntru)](https://github.com/Shawntru)
 
 
 
