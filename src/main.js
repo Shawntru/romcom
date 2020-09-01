@@ -29,7 +29,7 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-function displayCover(currentCover) {
+function displayCover() {
   coverTitle.innerText = currentCover.title;
   document.querySelector('.tagline-1').innerText = currentCover.tagline1;
   document.querySelector('.tagline-2').innerText = currentCover.tagline2;
@@ -43,7 +43,7 @@ function getRandomCover() {
     descriptors[getRandomIndex(descriptors)],
     descriptors[getRandomIndex(descriptors)]
   );
-  displayCover(currentCover);
+  displayCover();
 }
 
 function deleteSavedBook(id) {
@@ -52,19 +52,21 @@ function deleteSavedBook(id) {
 
 function makeUserBook() {
   event.preventDefault();
-  formView.classList.add('hidden');
-  homeView.classList.remove('hidden');
-  saveCov.classList.remove('hidden');
+  showHome();
   currentCover = new Cover (
     document.getElementById('cover').value,
     document.getElementById('title').value,
     document.getElementById('descriptor1').value,
     document.getElementById('descriptor2').value
   );
+  pushToAssets();
+  displayCover();
+}
+
+function pushToAssets() {
   covers.push(currentCover.cover);
-  titles.push(currentCover.title);
   descriptors.push(currentCover.tagline1, currentCover.tagline2);
-  displayCover(currentCover);
+  titles.push(currentCover.title);
 }
 
 function saveBook() {
