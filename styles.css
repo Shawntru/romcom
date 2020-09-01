@@ -37,6 +37,8 @@ body {
 .controls > button:hover {
   background: #e07999;
   color: white;
+  transition: 0.3s;
+  transform: translateY(-3px);
 }
 
 /* ~~~~~~~~~~~~~~ HOME ~~~~~~~~~~~~~~~~ */
@@ -50,6 +52,7 @@ body {
 .cover-image,
 .overlay {
   object-fit: cover;
+  position: absolute;
   height: 100%;
   width: 100%;
 }
@@ -116,9 +119,6 @@ body {
 
 .saved-covers-section > * {
   visibility: visible;
-}
-
-.saved-covers-section > * {
   transition: opacity 150ms linear 100ms, transform 150ms ease-in-out 100ms;
 }
 
