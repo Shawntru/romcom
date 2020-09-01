@@ -1,4 +1,3 @@
-// Create variables targetting the relevant DOM elements here 👇
 var coverImg = document.querySelector('.cover-image');
 var coverTitle = document.querySelector('.cover-title');
 var createNew = document.querySelector('.create-new-book-button');
@@ -11,13 +10,12 @@ var saveCov = document.querySelector('.save-cover-button');
 var savedCoverSection = document.querySelector('.saved-covers-section');
 var savedView = document.querySelector('.saved-view');
 var viewSaved = document.querySelector('.view-saved-button');
-// We've provided a few variables below
+
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover = {};
+var currentCover;
 
-// Add your event listeners here 👇
 createNew.addEventListener('click', makeUserBook);
 homeButton.addEventListener('click', showHome);
 makeNew.addEventListener('click', showForm);
@@ -25,7 +23,6 @@ randomCov.addEventListener('click', getRandomCover);
 saveCov.addEventListener('click', saveBook);
 viewSaved.addEventListener('click', showSaved);
 
-// Create your event handlers and other functions here 👇
 getRandomCover();
 
 function getRandomIndex(array) {
@@ -78,7 +75,7 @@ function saveBook() {
 }
 
 function createHTML() {
-  var htmlBlock = `<div class="mini-cover" id="${currentCover.id}" ondblclick="deleteSavedBook(${currentCover.id})">
+  var htmlBlock = `<div class="mini-cover hover" id="${currentCover.id}" ondblclick="deleteSavedBook(${currentCover.id})">
   <img class="mini-cover" src="${currentCover.cover}">
   <h2 class="cover-title">${currentCover.title}</h2>
   <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
