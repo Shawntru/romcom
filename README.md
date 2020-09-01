@@ -31,6 +31,7 @@ Use the RNG3000 to randomly populate the title, descriptors, and cover image for
   * Click on the "Show New Random Cover" button to generate your cover.
 * Make your own custom cover!
   * Click on the "Make Your Own Cover" button and fill out the form how you like. Images from the internet can be input by entering their URL address. 
+  * Your inputs will be saved and may come up in future covers!
 * Save and View your favorite covers!
   * Click the "Save Cover" button to save the currently displayed cover. 
   * Click the "View Saved Covers" to view all your saved covers.
