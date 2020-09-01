@@ -101,6 +101,7 @@ function showSaved() {
   randomCov.classList.add('hidden');
   saveCov.classList.add('hidden');
   savedView.classList.remove('hidden');
+  viewSaved.classList.add('hidden');
 }
 
 function showHome() {
@@ -110,4 +111,5 @@ function showHome() {
   randomCov.classList.remove('hidden');
   saveCov.classList.remove('hidden');
   savedView.classList.add('hidden');
+  viewSaved.classList.remove('hidden')
 }
