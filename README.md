@@ -19,9 +19,9 @@ Use the RNG3000 to randomly populate the title, descriptors, and cover image for
 
 ## Screenshots
 
-![Saved Cover view](https://imgur.com/slxiPhu)
+[Saved Cover view](https://imgur.com/slxiPhu)
 
-![User Input Form]([https://imgur.com/IMvixJI)
+[User Input Form]([https://imgur.com/IMvixJI)
 
 ## Features
 
