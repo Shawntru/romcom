@@ -7,7 +7,7 @@
 ### [Click here to visit the site!](https://shawntru.github.io/romcom/)
 ## Table of Contents
 
-* [General Info](#gerenal-info)
+* [General Info](#general-info)
 * [Screenshots](#screenshots)
 * [Features](#features)
 * [Inspiration](#inspiration)
@@ -19,9 +19,11 @@ Use the RNG3000 to randomly populate the title, descriptors, and cover image for
 
 ## Screenshots
 
-![Saved Cover view](https://imgur.com/slxiPhu.png)
+![Home View](./assets/homeView.png)
 
-![User Input Form](https://imgur.com/IMvixJI.png)
+![Saved Covers View](./assets/savedCoversView.png)
+
+![User Input Form View](./assets/formView.png)
 
 ## Features
 
@@ -36,14 +38,9 @@ Use the RNG3000 to randomly populate the title, descriptors, and cover image for
 * Randomly generated cover images!
   * Don't feel like putting in your own image for a custom cover? Just leave it blank and we will pull one for you!
 
-## To Do List
-
-* Add breaking heart animation upon deleting saved covers.
-* Add 'Share with Friends' links.
-
 ## Inspiration
 
-We were inspired by our love of the great American novel and telenovela.
+We were inspired by our love of the great American novel and telenovelas.
 
 ## Contact 
 
