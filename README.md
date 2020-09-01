@@ -9,7 +9,6 @@
 * [General Info](#gerenal-info)
 * [Screenshots](#screenshots)
 * [Features](#features)
-* [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
 
