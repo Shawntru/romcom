@@ -15,6 +15,7 @@ var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 var currentCover;
+var deleteID;
 
 createNew.addEventListener('click', makeUserBook);
 homeButton.addEventListener('click', showHome);
@@ -22,6 +23,8 @@ makeNew.addEventListener('click', showForm);
 randomCov.addEventListener('click', getRandomCover);
 saveCov.addEventListener('click', saveBook);
 viewSaved.addEventListener('click', showSaved);
+document.body.addEventListener('animationend', removeBookHtml);
+document.body.addEventListener('webkitAnimationEnd', removeBookHtml);
 
 getRandomCover();
 
@@ -46,8 +49,13 @@ function getRandomCover() {
   displayCover();
 }
 
-function deleteSavedBook(id) {
-  document.getElementById(id).remove();
+function addRemoveClass(id) {
+  deleteId = id;
+  document.getElementById(id).classList.add('removed');
+}
+
+function removeBookHtml() {
+  document.getElementById(deleteId).remove();
 }
 
 function makeUserBook() {
@@ -77,7 +85,7 @@ function saveBook() {
 }
 
 function createHTML() {
-  var htmlBlock = `<div class="mini-cover hover" id="${currentCover.id}" ondblclick="deleteSavedBook(${currentCover.id})">
+  var htmlBlock = `<div class="mini-cover hover" id="${currentCover.id}" ondblclick="addRemoveClass(${currentCover.id})">
   <img class="mini-cover" src="${currentCover.cover}">
   <h2 class="cover-title">${currentCover.title}</h2>
   <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>

@@ -157,6 +157,35 @@ body {
   padding: 5px;
 }
 
+.removed {
+  -webkit-animation: disappear 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation: disappear 1s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes disappear{
+  50% {
+    -webkit-transform: translateX(-10%);
+    transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(750%);
+    transform: translateX(750%);
+  }
+}
+
+@keyframes disappear{
+  50% {
+    -webkit-transform: translateX(-10%);
+    transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(750%);
+    transform: translateX(750%);
+  }
+}
+
 /* ~~~~~~~~~~~~~ NEW COVER FORM ~~~~~~~~~~~~~~~ */
 form {
   display: flex;
