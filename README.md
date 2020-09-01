@@ -2,8 +2,7 @@
 
 ---
 
-> Tired of the same old romantic slop fests? Get ready to have your socks blown off with this super duper awesome romantic novel cover generator!
-
+> Tired of the same old romantic slop fests? Get ready to have your socks blown off with this super duper awesome romantic novel cover generator! [Click here to visit the site.](https://shawntru.github.io/romcom/)
 ## Table of Contents
 
 * [General Info](#gerenal-info)
@@ -35,7 +34,6 @@ Use the RNG3000 to randomly populate the title, descriptors, and cover image for
 
 ## To Do List
 
-* Add micro effects/CSS styling to pointers to enhance interaction between the user and the page. 
 * Add breaking heart animation upon deleting saved covers.
 * Add 'Share with Friends' links.
 
