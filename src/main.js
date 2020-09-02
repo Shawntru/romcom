@@ -47,9 +47,9 @@ function getRandomCover() {
   displayCover();
 }
 
-function addRemoveClass(id) {
+function animateExit(id) {
   currentCover.id = id;
-  document.getElementById(id).classList.add('removed');
+  document.getElementById(id).classList.add('animation');
 }
 
 function removeBookHtml() {
@@ -84,7 +84,7 @@ function saveBook() {
 }
 
 function createHTML() {
-  var htmlBlock = `<div class="mini-cover hover" id="${currentCover.id}" ondblclick="addRemoveClass(${currentCover.id})">
+  var htmlBlock = `<div class="mini-cover hover" id="${currentCover.id}" ondblclick="animateExit(${currentCover.id})">
   <img class="mini-cover" src="${currentCover.cover}">
   <h2 class="cover-title">${currentCover.title}</h2>
   <h3 class="tagline">A tale of ${currentCover.tagline1} and ${currentCover.tagline2}<h3>
