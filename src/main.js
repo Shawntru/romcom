@@ -22,7 +22,7 @@ makeNew.addEventListener('click', showForm);
 randomCov.addEventListener('click', getRandomCover);
 saveCov.addEventListener('click', saveBook);
 viewSaved.addEventListener('click', showSaved);
-document.body.addEventListener('animationend', removeBookHtml);
+// document.body.addEventListener('animationend', removeBookHtml);
 
 getRandomCover();
 
@@ -50,6 +50,7 @@ function getRandomCover() {
 function animateExit(id) {
   currentCover.id = id;
   document.getElementById(id).classList.add('animation');
+  document.body.addEventListener('animationend', removeBookHtml);
 }
 
 function removeBookHtml() {
